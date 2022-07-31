@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article class="article">
+      <form onsubmit="screenshot();return false">
+        <input
+          type="url"
+          name="url"
+          id="url"
+          placeholder="https://google.com"
+        />
+        <button type="submit">Screenshot</button>
+      </form>
+      <img alt="screenshot" />
+    </article>
+    <script>
+      const image = document.querySelector("img");
+      window.addEventListener("load", () => {
+        image.style.display = "none";
+      });
+
+      window.removeEventListener("load");
+      function screenshot() {
+        const url = document.querySelector("input").value;
+
+        if (!url) return;
+
+        image.src = "/screenshot?url=" + encodeURIComponent(url);
+        image.onload = () => {
+          image.style.display = "block";
+        };
+      }
+    </script>
+  </body>
+</html>
