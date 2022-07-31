@@ -1,5 +1,5 @@
 {
-  "name": "ss",
+  "name": "Web-Screenshot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,7 +13,6 @@
   "dependencies": {
     "browser-sync": "^2.27.10",
     "ejs": "^3.1.8",
-    "express": "^4.18.1",
-    "puppeteer": "^15.5.0"
+    "express": "^4.18.1"
   }
 }
